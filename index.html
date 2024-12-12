@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>UniSol</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+
+        <!-- MDB CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <script src="https://kit.fontawesome.com/df4fa444c6.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body{
+                background-color:rgb(249, 248, 236);
+                /* background-color: rgb(250, 236, 250); */
+            }
+           
+
+            .testimonial-title {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .testimonial-subtitle {
+                font-size: 1.25rem;
+                color: #555;
+            }
+
+            .testimonial-item {
+                position: relative;
+            }
+
+            .testimonial-image img {
+                width: 100%;
+                height: auto;
+                border-radius: .5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .client-info {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0.8);
+                padding: 15px;
+                border-radius: .5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .client-info img {
+                border: 4px solid #fff;
+            }
+
+            .client-info h5 {
+                font-size: 1.25rem;
+                color: #333;
+            }
+
+            .client-info p {
+                font-size: 1rem;
+                color: #555;
+            }
+            .logo-large{
+                width: 140px;
+                transition: width 0.3s ease-in-out;
+            }
+            .logo-small{
+                width: 100%;
+                height: 40px;
+            }
+            .custom-img {
+                border-radius: 30px;
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            /* Position the info box over the image */
+            .service-inner {
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Initial hidden state of the overlay information */
+            .service-info {
+                position: absolute;
+                top: 100%; /* Place it off-screen initially */
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                transition: all 0.5s ease; /* Smooth transition for the hover effect */
+                opacity: 0;
+            }
+
+            /* Hover effect to reveal the information */
+            .service-item:hover .service-info {
+                top: 0;
+                opacity: 1;
+            }
+
+            /* Style for the information text */
+            .service-info p {
+                margin: 0;
+                padding: 20px;
+            }
+            .three-section-container {
+    display: flex;
+    justify-content: space-between; /* Space between each section */
+    padding: 20px;
+    gap: 20px; /* Adds space between the sections */
+}
+
+.section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 30%; /* Each section takes 30% of the total width */
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-10px); /* Animates the section on hover */
+}
+
+.section-image {
+    width: 100%; /* Image takes up the full width of the container */
+    border-radius: 8px;
+    height: auto; 
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+.mid-continer{
+                width: 90%;
+            }
+            .new-muted{
+                color: rgb(54, 54, 54);
+                font-weight: 450;
+            }
+
+@media (max-width: 768px) {
+    .three-section-container {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .section {
+        width: 80%; /* Each section takes 80% of the width on small screens */
+        margin-bottom: 20px;
+    }
+}
+            
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Topbar Start -->
+        <div class="container-fluid px-5 d-none d-lg-block" style="background-color:rgb(255, 254, 245);">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-5 text-center text-lg-start mb-lg-0" >
+                    <div class="d-flex" >
+                        <a href="#" class="text-dark me-4"><i class="fas fa-envelope text-secondary me-2"></i>service@unisol.org.in</a>
+                        <a href="tel:+919325312125" class="text-dark me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>+91 932 531 2125</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <a href="#" class="text-dark me-2"> Help</a><small> / </small>
+                        <a href="#" class="text-dark mx-2"> Support</a><small> / </small>
+                        <a href="#" class="text-dark ms-2"> Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <div class="container-fluid nav-bar p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark px-3 py-2 bg-white">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="public/img/logo/unisol-logo.png" id="logo" class="img-fluid logo-large me-2" alt="UniSol Logo" style="width: 170px; height: 90px;">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active text-dark">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle text-dark">HealthCare</span>
+                            </a>
+                            <div class="dropdown-menu m-0">
+                                <a href="medical-equip.html" class="dropdown-item">Medical Equipment</a>
+                                <a href="screening.html" class="dropdown-item">Screening Devices</a>
+                                <a href="infrastructure.html" class="dropdown-item">Hospital Infrastructure</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle text-dark">Waste Management</span>
+                            </a>
+                            <div class="dropdown-menu m-0">
+                                <a href="waste-manag.html" class="dropdown-item">Solid Waste Management</a>
+                                <a href="biomedical.html" class="dropdown-item">Biomedical Waste Management</a>
+                                <a href="stp.html" class="dropdown-item">Sewage Treatment Plant</a>
+                                <a href="etp.html" class="dropdown-item">Effluent Treatment Plant</a>
+                                <a href="waste-water-manage.html" class="dropdown-item">Kitchen Waste Management</a>
+                                <a href="clean-safe.html" class="dropdown-item">Clean Safe Water</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle text-dark">Start-Up Projects</span>
+                            </a>
+                            <div class="dropdown-menu m-0">
+                                <a href="start-up.html" class="dropdown-item">Start-Up Health Group Projects</a>
+                                <a href="drone.html" class="dropdown-item">Agricultural Drone</a>
+                                <a href="pallets.html" class="dropdown-item">Automation in Pharmacy</a>
+                            </div>
+                        </div>
+                        <a href="inspiration.html" class="nav-item nav-link text-dark">Our Inspiration</a>
+                        <a href="contact.html" class="nav-item nav-link text-dark">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <script>
+            window.onscroll = function() {
+                var logo = document.getElementById("logo");
+                if (window.scrollY > 40) {
+                    logo.classList.add("logo-small");
+                } else {
+                    logo.classList.remove("logo-small");
+                }
+            };
+        </script>
+
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="appointmentModalLabel">Request Appointment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="appointmentForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Your Phone Number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                            <div class="mb-3">
+                                <label for="time" class="form-label">Preferred Time</label>
+                                <input type="time" class="form-control" id="time">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Company Names -->
+<div class="container-fluid service overflow-hidden pt-5">
+    <div class="container py-5">
+        <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="sub-style">
+                <h5 class="sub-title text-primary px-3">Our Partners</h5>
+            </div>
+            <h1 class="display-5 mb-4">UniSol is Partnered With</h1>
+        </div>
+
+        <div class="row">
+            <!-- Column 1 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <div class="service-inner position-relative">
+                        <div class="service-img">
+                            <img src="public/img/logo/unisol.png" class="img-fluid w-100 rounded-0 custom-img" alt="UniSol">
+                        </div>
+                        <div class="service-info">
+                            <p>UniSol Services LLP embodies the principles of "Good Thoughts, Good Deeds, Broad Vision." Their philosophy focuses on integrity, positive actions, and a forward-thinking approach to create meaningful impact. Through thoughtful leadership and responsible practices, they aim to foster growth and sustainability for the future.</p>
+                        </div>
+                        <div class="service-title text-center mt-2">
+                            <div class="bg-success text-white rounded-pill mx-5 mb-4 shadow-lg">
+                                <a href="#" class="h4 text-white mb-0">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <div class="service-inner position-relative">
+                        <div class="service-img">
+                            <img src="public/img/logo/frolic.png" class="img-fluid w-100 rounded-0 custom-img" alt="Frolic">
+                        </div>
+                        <div class="service-info">
+                            <p>Frolic Sport and Event Management specializes in organizing dynamic sports events and recreational activities. With a focus on seamless planning and execution, they create memorable experiences through well-coordinated tournaments, corporate events, and community sports programs.</p>
+                        </div>
+                        <div class="service-title text-center">
+                            <div class="bg-success text-white rounded-pill mx-5 mb-4 shadow-lg">
+                                <a href="#" class="h4 text-white mb-0">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <!-- Column 5 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <div class="service-inner position-relative">
+                        <div class="service-img">
+                            <img src="public/img/logo/surgisol.png" class="img-fluid w-100 rounded-0 custom-img" alt="SurgiSol">
+                        </div>
+                        <div class="service-info">
+                            <p>SurgiSol  Healthcare Solutions is new startup offering multiple offerings suitable to evolving needs in Surgical Space we are committed to offering innovative solutions</p>
+                        </div>
+                        <div class="service-title text-center mt-2">
+                            <div class="bg-success text-white rounded-pill mx-5 mb-4 shadow-lg">
+                                <a href="#" class="h4 text-white mb-0">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <!-- Column 3 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <div class="service-inner position-relative">
+                        <div class="service-img">
+                            <img src="public/img/logo/ignite.png" class="img-fluid w-100 rounded-0 custom-img" alt="Ignite">
+                        </div>
+                        <div class="service-info">
+                            <p>Ignite Sphere: Turning innovative ideas into reality through creativity, collaboration, and cutting-edge solutions. Fueling progress and transformation for a brighter future.</p>
+                        </div>
+                        <div class="service-title text-center mt-2">
+                            <div class="bg-success text-white rounded-pill mx-5 mb-4 shadow-lg">
+                                <a href="#" class="h4 text-white mb-0">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-item rounded-4 overflow-hidden">
+                    <div class="service-inner position-relative">
+                        <div class="service-img">
+                            <img src="public/img/logo/enviro.png" class="img-fluid w-100 rounded-0 custom-img" alt="Enviro">
+                        </div>
+                        <div class="service-info">
+                            <p>Enviro Solutions offers industrial waste water treatment systems, filter presses, filter plates, filter cloths, belt presses, and other dewatering systems and equipment, new or used.</p>
+                        </div>
+                        <div class="service-title text-center mt-2">
+                            <div class="bg-success text-white rounded-pill mx-5 mb-4 shadow-lg">
+                                <a href="#" class="h4 text-white mb-0">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Company Names -->
+
+
+
+
+
+
+        <!-- About Start -->
+        <!-- <div class="container-fluid py-5">
+            <div class="container">
+                <div class="row g-5"> -->
+                    <!-- Left Column: Profile Section -->
+                    <!-- <div class="col-lg-5 mb-4 mb-lg-0 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="rounded p-4">
+                            <img src="public/home-1.webp" class="img-fluid w-100 rounded mb-3" alt="Vikram Khulsange">
+                        </div>
+                    </div> -->
+                    <!-- Right Column: Content Section -->
+                    <!-- <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
+                        <h1 class="mb-4 fw-bold text-center">Empowering Caregivers with Timely Delivery of Essential Healing Products</h1>
+                        <p class="mb-4">
+                            At the heart of our mission lies the commitment to deliver essential products to the healing hands that tirelessly work towards the well-being of others. Whether it's medical supplies, therapeutic tools, or wellness essentials, our goal is to ensure these vital items reach the dedicated professionals and caregivers who make a profound difference in people's lives. We understand the significance of timely, reliable deliveries in supporting those on the front lines of healthcare and wellness. With precision and care, we strive to facilitate seamless distribution, enabling practitioners to focus on what truly matters—delivering compassionate care and aiding in the process of healing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- About End -->
+ <div class="container-fluid py-5">
+    <!-- About Us Section -->
+    <div class="container text-center">
+        <h1 class="display-5 mb-4">About Us</h1>
+        <p class="lead" style="font-size: 22px;">We are committed to making a positive impact on society by providing top-quality healthcare solutions and sustainable waste management services. Our mission is to create a healthier and greener future for all. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid labore quo itaque, recusandae quia unde tempore quas incidunt, temporibus natus animi quasi omnis nulla aliquam nihil pariatur saepe non accusantium doloribus totam molestiae, earum minima veniam voluptatem. Optio dolores tempora labore ducimus sint recusandae cum numquam. Ab aut illum nam!</p>
+    </div>
+
+
+ </div>
+     
+
+
+        <!-- Countries We Offer Start -->
+        <div class="container-fluid country overflow-hidden py-5">
+            <div class="container">
+                <div class="section-title text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 70px;">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">SERVICES WE OFFER</h5>
+                    </div>
+                    <!-- <h1 class="display-5 mb-4">How Timely Deliveries Empower Healthcare Heroes</h1>
+                    <p class="mb-0">See how our timely deliveries of essential supplies empower healthcare professionals to provide exceptional care. Watch the videos to discover how we support those on the frontlines of healing.</p> -->
+                </div>
+                <div class="three-section-container">
+                    <!-- Section 1 -->
+                    <div class="section">
+                        <a href="./medical-equip.html"></a>
+                        <img src="./img/health-care2.jpg" alt="Section 1 Image" class="section-image"  style="height:300px;">
+                        <h3 class="section-title">Health Care</h3>
+                    </div>
+                
+                    <!-- Section 2 -->
+                    <div class="section">
+                        <a href="./waste-manag.html"> 
+                        <img src="./img/waste-manegment2.jpg" alt="Section 2 Image" class="section-image" style="height:300px;">
+                        <h3 class="section-title">Waste Management</h3>
+                    </a>
+                    </div>
+                
+                    <!-- Section 3 -->
+                    <div class="section">
+                        <a href="./start-up.html">
+                        <img src="./img/startup2.jpg" alt="Section 3 Image" class="section-image"  style="height:300px;">
+                        <h3 class="section-title">Startup Projects</h3>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- <div class="row g-4 text-center"> -->
+                    <!-- Video 1 -->
+                    <!-- <div class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="country-item item-1 position-relative">
+                            <div class="rounded overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" class="img-fluid w-100 rounded" style="height: 200px; border: none;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Video 2 -->
+                    <!-- <div class="col-lg-6 col-md-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="country-item item-2 position-relative">
+                            <div class="rounded overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" class="img-fluid w-100 rounded" style="height: 200px; border: none;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Video 3 -->
+                    <!-- <div class="col-lg-6 col-md-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="country-item item-3 position-relative">
+                            <div class="rounded overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" class="img-fluid w-100 rounded" style="height: 200px; border: none;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Video 4 -->
+                    <!-- <div class="col-lg-6 col-md-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="country-item position-relative">
+                            <div class="rounded overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" class="img-fluid w-100 rounded" style="height: 200px; border: none;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Countries We Offer End -->
+
+
+
+        <!-- Mission and Vision  Start -->
+        <div class="container-fluid testimonial overflow-hidden pb-5">
+            <div class="container py-5">
+                <div class="section-title container-fluid mb-5 wow fadeInUp "style="max-width: 1500px;" data-wow-delay="0.1s">
+                    <div class="sub-style mb-5">
+                        <h5 class="sub-title text-primary px-3 ">Mission And Vision</h5>
+                    </div>
+                    <div class="text-start  mb-4">
+                        <h1 class="display-5 mb-2">Mission</h1>
+                        <p class="fw-normal">Our mission is to deliver exceptional services across healthcare, waste management, and startup support, driving positive change in the lives of individuals and communities. We aim to revolutionize healthcare by ensuring access to quality services, enhance environmental sustainability through innovative waste management solutions, and empower aspiring entrepreneurs by nurturing their startups with the resources and guidance they need to thrive.</p>
+                        <p class="fw-normal">Our commitment lies in fostering growth, sustainability, and well-being while continuously striving for excellence. Through innovation, integrity, and collaboration, we aim to create a lasting impact, ensuring our services contribute meaningfully to a healthier, cleaner, and more prosperous world. At the heart of everything we do is a dedication to improving lives and paving the way for a brighter, sustainable future.</p>
+                    </div>
+                    <div class="text-start  mb-4">
+                        <h1 class="display-5 mb-2">Vision</h1>
+                        <p class="fw-normal">Our vision is to be a driving force in shaping a healthier, cleaner, and more innovative world. We are dedicated to delivering sustainable solutions that not only address pressing global challenges but also empower communities to thrive.</p>
+                        <p class="fw-normal">By fostering environmental responsibility, advancing healthcare access, and supporting innovation across industries, we aim to drive meaningful change that improves quality of life and ensures a sustainable future for generations to come.</p>
+                        <p class="fw-normal">Through collaboration, creativity, and an unwavering commitment to excellence, we seek to inspire progress and redefine standards, making a lasting impact on society and the environment. At the core of our mission is the belief that sustainable growth and community empowerment go hand in hand, and we are committed to turning this belief into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mission and Vision  End -->
+         <script>
+            $(document).ready(function(){
+                $(".testimonial-carousel").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    margin: 30,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    nav: true,
+                    navText: [
+                        '<i class="fas fa-chevron-left"></i>',
+                        '<i class="fas fa-chevron-right"></i>'
+                    ],
+                    dots: false,
+                    animateIn: 'zoomInDown',
+                    animateOut: 'zoomOutUp'
+                });
+            });
+         </script>
+
+
+        <!-- Counter Facts Start -->
+        <div class="container-fluid counter-facts py-5 bg-light">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <!-- Counter 1 -->
+                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="counter d-flex flex-column align-items-center bg-gradient rounded shadow p-4 text-center">
+                            <div class="counter-icon mb-3">
+                                <img src="public/assets/img/industry/services.png" class="img-fluid">
+                            </div>
+                            <div class="counter-content">
+                                <h3 class="mb-2 text-dark">Services</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value display-4 text-dark" data-toggle="counter-up">3254</span>
+                                    <h4 class="text-dark mb-0 fs-2 ms-2">+</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter 2 -->
+                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="counter d-flex flex-column align-items-center bg-gradient rounded shadow p-4 text-center">
+                            <div class="counter-icon mb-3">
+                                <img src="public/assets/img/industry/clients.png" class="img-fluid">
+                            </div>
+                            <div class="counter-content">
+                                <h3 class="mb-2 text-dark">Clients</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value display-4 text-dark" data-toggle="counter-up">4865</span>
+                                    <h4 class="text-dark mb-0 fs-2 ms-2">+</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter 3 -->
+                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="counter d-flex flex-column align-items-center bg-gradient rounded shadow p-4 text-center">
+                            <div class="counter-icon mb-3">
+                                <img src="public/assets/img/industry/project.png" class="img-fluid">
+                            </div>
+                            <div class="counter-content">
+                                <h3 class="mb-2 text-dark">Projects</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value display-4 text-dark" data-toggle="counter-up">2654</span>
+                                    <h4 class="text-dark mb-0 fs-2 ms-2">+</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter 4 -->
+                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="counter d-flex flex-column align-items-center bg-gradient rounded shadow p-4 text-center">
+                            <div class="counter-icon mb-3">
+                                <img src="public/assets/img/industry/expert.png" class="img-fluid">
+                            </div>
+                            <div class="counter-content">
+                                <h3 class="mb-2 text-dark">Expert Teams</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value display-4 text-dark" data-toggle="counter-up">100</span>
+                                    <h4 class="text-dark mb-0 fs-2 ms-2">+</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Counter Facts End -->
+
+
+       <!-- Footer Start -->
+       <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="mid-continer m-auto py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column mb-4">
+                        <h4 class="text-secondary mb-4">Headquarters</h4>
+                        <a href=""><i class="fa fa-map-marker-alt me-2"></i> Block, 35, Below Balasaheab Thackeray Flyover, Near Habibia Masjid, Mumbai 400102</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> service@unisol.org.in</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +91 932 531 2125</a>
+                    </div>
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Regional office</h4>
+                        <a href=""><i class="fa fa-map-marker-alt me-2"></i>3th floor , F. No 2, Prince Complex, Aprt, Chatrapati Nagar, Nagpur, Maharashtra 440015</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> admin@unisol.org.in</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +91 749 901 3846 </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Our Services</h4>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                HealthCare
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;" aria-labelledby="dropdownMenuLink">
+                              <li> <a href="medical-equip.html" class="dropdown-item">Medical Equipment</a></li>
+                              <li><a href="screening.html" class="dropdown-item">Screening Devices</a></li>
+                              <li><a href="infrastructure.html" class="dropdown-item">Hospital Infrastructure</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                Waste Management
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;" aria-labelledby="dropdownMenuLink">
+                                <li><a href="waste-manag.html" class="dropdown-item">Solid Waste Management</a></li>
+                                <li><a href="biomedical.html" class="dropdown-item">Biomedical Waste Management</a></li>
+                                <li><a href="stp.html" class="dropdown-item">Sewage Treatment Plant</a></li>
+                                <li><a href="etp.html" class="dropdown-item">Effluent Treatment Plant</a></li>
+                                <li><a href="waste-water-manage.html" class="dropdown-item">Kitchen Waste Management</a></li>
+                                <li><a href="clean-safe.html" class="dropdown-item">Clean Safe Water</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                Start-Up Projects
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;" aria-labelledby="dropdownMenuLink">
+                              <li><a href="drone.html" class="dropdown-item">Agricultural Drone</a></li>
+                              <li><a href="pallets.html" class="dropdown-item">Automation in Pharmacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Privacy Policy</h4>
+                        <div class="mb-1">
+                            <a href="404.html" class=""><i class="fas fa-angle-right me-2"></i> Terms Of Use</a>
+                        </div>
+                        <div class="mb-3">
+                            <a href="contact.html" class=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <h4 class="text-secondary mb-4">Send Your Message</h4>
+                    <div class="col-lg-12 wow fadeInRight" data-wow-delay="0.3">
+                        
+                        <!-- <p class="mb-3">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="phone" class="form-control" id="phone" placeholder="Phone">
+                                        <label for="phone">Your Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6 ">
+                                    <div class="mb-3 bg-white rounded py-3">
+                                       
+                                        <div class="dropdown ">
+                                            <button class="border-0 bg-white  dropdown-toggle new-muted" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                 Select Services
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="./medical-equip.html">Health Care</a></li>
+                                                <li><a class="dropdown-item" href="./waste-manag.html">Waste Managment</a></li>
+                                                <li><a class="dropdown-item" href="./start-up.html">Start-Up-Projects</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Technokrate</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://technokrate.com">Technokrate</a> Distributed By <a class="border-bottom text-white" href="https://technokrate.com">Technokrate LTD. PVT.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
